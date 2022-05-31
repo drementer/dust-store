@@ -2,34 +2,37 @@
 	@include flex-center-row;
 	@include padding(2rem);
 
+	&__logo,
+	&__user {
+		flex-grow: 1;
+		flex-basis: 0;
+	}
+
 	&__logo {
 		@include flex-row;
 		align-items: center;
 		gap: 1rem;
-		flex-grow: 1;
 
-		img{
+		img {
+			height: 2rem;
+		}
+	}
+
+	&__user {
+		@include flex-row;
+		align-items: center;
+		justify-content: flex-end;
+
+		.buton {
+			@include padding(0.75rem);
+		}
+
+		img {
 			height: 2rem;
 		}
 	}
 
 	.nav {
 		flex-grow: 2;
-	}
-
-	&__user {
-		flex-grow: 1;
-		@include flex-row;
-		align-items: center;
-		justify-content: flex-end;
-		gap: 0.5rem;
-
-		.buton {
-			@include padding(0.75rem);
-		}
-
-		img{
-			height: 2rem;
-		}
 	}
 }

@@ -33,9 +33,12 @@ template,
 }
 
 h1,
-h2,
+h2{
+	color: $aksan;
+}
+
 span,
 p,
 label{
-	color: $aksan;
+	color: $ana-renk;
 }
