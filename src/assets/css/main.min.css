@@ -384,40 +384,44 @@ textarea {
   font-weight: 400;
 }
 
-.eleman {
+.loader {
   z-index: 99;
 }
 
-.eleman {
+.mf-cursor {
   z-index: 98;
 }
 
-.eleman {
+.modal {
   z-index: 97;
 }
 
-.eleman {
+.popup {
   z-index: 96;
 }
 
-.eleman {
+.sidebar {
   z-index: 95;
 }
 
-.eleman {
+.toast {
   z-index: 94;
 }
 
-.eleman {
+.no-js {
   z-index: 93;
 }
 
-.eleman {
+.go-top {
   z-index: 92;
 }
 
-.eleman {
+.header {
   z-index: 91;
+}
+
+.buton {
+  z-index: 90;
 }
 
 * {
@@ -945,10 +949,8 @@ label {
   position: fixed;
   inset: 0;
   bottom: 0;
-  background-color: #ffffff;
   display: grid;
   place-content: center;
-  z-index: 99999;
   overflow: hidden;
   transition: all 200ms ease-out;
   -webkit-user-select: none;
@@ -956,85 +958,76 @@ label {
       -ms-user-select: none;
           user-select: none;
   pointer-events: all;
-  -webkit-clip-path: circle(100% at 50% 50%);
-          clip-path: circle(100% at 50% 50%);
 }
-.loader[kapat] {
-  -webkit-animation: kapat 1s cubic-bezier(0.19, 1, 0.22, 1);
-          animation: kapat 1s cubic-bezier(0.19, 1, 0.22, 1);
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  pointer-events: all;
-}
-.loader[kapat] .loader__spinner {
-  opacity: 0;
-}
-@-webkit-keyframes kapat {
-  0% {
-    -webkit-clip-path: circle(100% at 50% 50%);
-            clip-path: circle(100% at 50% 50%);
-  }
-  100% {
-    -webkit-clip-path: circle(0% at 50% 50%);
-            clip-path: circle(0% at 50% 50%);
-  }
-}
-@keyframes kapat {
-  0% {
-    -webkit-clip-path: circle(100% at 50% 50%);
-            clip-path: circle(100% at 50% 50%);
-  }
-  100% {
-    -webkit-clip-path: circle(0% at 50% 50%);
-            clip-path: circle(0% at 50% 50%);
-  }
-}
-.loader__spinner {
-  width: 10rem;
-  height: 10rem;
-  background: transparent;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  transition: all 250ms ease-out;
+.loader img {
+  height: 3rem;
   position: relative;
+  z-index: 4;
+  mix-blend-mode: difference;
 }
-.loader__spinner::after {
-  content: "";
-  border-radius: 50%;
+.loader__katman {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000;
-  -webkit-animation: pulse 1.2s infinite;
-          animation: pulse 1.2s infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-          animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(100%);
+  -webkit-animation: acilis 500ms linear forwards;
+          animation: acilis 500ms linear forwards;
 }
-.loader__spinner img {
-  width: 100%;
-  max-height: 100%;
+.loader__katman--1 {
+  background-color: #ffffff;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  transform: translateY(0);
+  -webkit-animation: acilis2 500ms linear forwards;
+          animation: acilis2 500ms linear forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  z-index: 1;
 }
-@-webkit-keyframes pulse {
+.loader__katman--2 {
+  background-color: #c0ac9f;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  z-index: 2;
+}
+.loader__katman--3 {
+  background-color: #ffffff;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  z-index: 3;
+}
+@-webkit-keyframes acilis {
   0% {
-    background-color: #000000;
-    transform: scale(0);
+    transform: translateY(100%);
   }
   100% {
-    background-color: rgba(0, 0, 0, 0);
-    transform: scale(1);
+    transform: translateY(-100%);
   }
 }
-@keyframes pulse {
+@keyframes acilis {
   0% {
-    background-color: #000000;
-    transform: scale(0);
+    transform: translateY(100%);
   }
   100% {
-    background-color: rgba(0, 0, 0, 0);
-    transform: scale(1);
+    transform: translateY(-100%);
+  }
+}
+@-webkit-keyframes acilis2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes acilis2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
   }
 }
 
