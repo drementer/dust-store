@@ -1,0 +1,28 @@
+{
+	"name": "html-dosya-yapim",
+	"version": "1.6.0",
+	"homepage": "http://drementer.com",
+	"description": "Projelerim için kalıp",
+	"main": "",
+	"scripts": {
+		"": ""
+	},
+	"keywords": [
+		"scss",
+		"css",
+		"html"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/drementer/html-dosya-yapim.git"
+	},
+	"author": {
+		"name": "drementer",
+		"email": "klncarslanburak@gmail.com",
+		"url": "https://github.com/drementer"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/drementer/html-dosya-yapim/issues"
+	}
+}
