@@ -1276,6 +1276,16 @@ input[type=number] {
   color: #ffffff;
 }
 
+*::-moz-selection {
+  background-color: #C0AC9F;
+  color: #ffffff;
+}
+
+*::selection {
+  background-color: #C0AC9F;
+  color: #ffffff;
+}
+
 body {
-  background-color: #F3EEEE;
+  background-color: #f3eeee;
 }/*# sourceMappingURL=main.min.css.map */
