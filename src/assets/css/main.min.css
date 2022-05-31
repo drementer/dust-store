@@ -455,9 +455,8 @@ template,
 }
 
 .buton {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -466,21 +465,20 @@ template,
   text-transform: capitalize;
   outline: none;
   border: 1px solid transparent;
-  background-color: #5900ff;
+  background-color: #C0AC9F;
   color: #ffffff;
   cursor: pointer;
   vertical-align: middle;
+  border-radius: 10px;
+  font-weight: 600;
+}
+@media (max-width: 1200px) {
+  .buton {
+    padding: 1rem calc(1.375rem + 1.5vw);
+  }
 }
 .buton:hover {
-  background-color: #3e00b3;
-}
-.buton.buton--2 {
-  background-color: transparent;
-  color: #5900ff;
-  border-color: currentColor;
-}
-.buton.buton--2:hover {
-  background-color: rgba(89, 0, 255, 0.1);
+  background-color: #beaa9c;
 }
 .buton.buton--hayalet {
   background-color: transparent;
@@ -507,14 +505,6 @@ template,
 }
 .buton.buton--link:hover::after {
   opacity: 1;
-}
-.buton.buton--buyuk {
-  font-size: 1.5rem;
-}
-@media (max-width: 1200px) {
-  .buton.buton--buyuk {
-    font-size: calc(1.275rem + 0.3vw);
-  }
 }
 
 .cerez-popup {
@@ -1218,4 +1208,19 @@ input[type=number] {
 
 .radio__label-kutu {
   border-radius: 50%;
+}
+
+.pill {
+  padding: 0.5rem 0.875rem;
+  background-color: rgba(239, 243, 244, 0.9);
+  color: #C0AC9F;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 5rem;
+}
+.pill--2 {
+  background-color: rgba(192, 172, 159, 0.9);
+  color: #ffffff;
 }/*# sourceMappingURL=main.min.css.map */
