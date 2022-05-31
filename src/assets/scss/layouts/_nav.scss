@@ -1,4 +1,10 @@
 .nav {
 	@include flex-center-row;
-	gap: 2rem;
+
+	.buton{
+		&:hover{
+			background-color: $ana-renk--10;
+			color: $beyaz;
+		}
+	}
 }
