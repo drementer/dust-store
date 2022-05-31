@@ -1,7 +1,6 @@
 .buton {
-	@include padding(0.5rem 1rem);
-	@include margin(0.5rem);
-	@include font-size(1.2rem);
+	@include padding(1rem 2.5rem);
+	@include font-size(1.125rem);
 	position: relative;
 	display: inline-flex;
 	justify-content: center;
@@ -10,23 +9,15 @@
 	text-transform: capitalize;
 	outline: none;
 	border: 1px solid transparent;
-	background-color: $mor;
+	background-color: $ana-renk;
 	color: $beyaz;
 	cursor: pointer;
 	vertical-align: middle;
+	border-radius: 10px;
+	font-weight: 600;
 
 	&:hover {
-		background-color: $mor-aktif;
-	}
-
-	&#{&}--2 {
-		background-color: transparent;
-		color: $mor;
-		border-color: currentColor;
-
-		&:hover {
-			background-color: $mor-hover;
-		}
+		background-color: darken($ana-renk, 0.9);
 	}
 
 	&#{&}--hayalet {
@@ -60,9 +51,5 @@
 				opacity: 1;
 			}
 		}
-	}
-
-	&#{&}--buyuk {
-		@include font-size(1.5rem);
 	}
 }
