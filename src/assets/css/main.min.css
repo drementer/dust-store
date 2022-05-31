@@ -4,12 +4,6 @@
  * klncarslanburak@gmail.com
  * @license MIT (https://github.com/drementer/dred/blob/master/LICENSE)
 */
-/* 
-/////////////////////////////////////
-	Vendors
-/////////////////////////////////////
-*/
-/* Reduce Motion */
 /*
 	(https://github.com/csstools/sanitize.css/blob/main/reduce-motion.css)
 
@@ -18,7 +12,7 @@
 	3. Remove timed scrolling behaviors when motion is reduced (opinionated).
 	4. Remove transitions when motion is reduced (opinionated).
 */
-@import url("https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @media (prefers-reduced-motion: reduce) {
   *,
 *::before,
@@ -42,7 +36,6 @@
     /* 4 */
   }
 }
-/* Reduce Motion SON */
 .mf-cursor {
   position: fixed;
   top: 0;
@@ -160,20 +153,10 @@
   transition-delay: 0s, 0s;
 }
 
-/* 
-/////////////////////////////////////
-	Vendors SON
-/////////////////////////////////////
-*/
 .no-js, .cerez-popup {
   box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
 }
 
-/*
-/////////////////////////////////////
-	Base
-/////////////////////////////////////
-*/
 /* 
 	(https://github.com/jgthms/minireset.css),
 	(https://github.com/necolas/normalize.css)
@@ -181,7 +164,6 @@
 
 	Ve kendi deneyimlerimden yola çıkarak oluşturdum
 */
-/* Reset */
 * {
   background-repeat: no-repeat;
   -moz-tab-size: 4;
@@ -287,10 +269,8 @@ button,
   -webkit-appearance: none;
 }
 
-/* Reset SON */
-/* Typography */
 * {
-  font-family: "Fira Code";
+  font-family: "Poppins", sans-serif;
   line-height: 1.5;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -327,52 +307,21 @@ h6 {
 	1.250 Major Third
 */
 h1 {
-  font-size: 3.815rem;
+  font-size: 5rem;
 }
 @media (max-width: 1200px) {
   h1 {
-    font-size: calc(1.5065rem + 3.078vw);
+    font-size: calc(1.625rem + 4.5vw);
   }
 }
 
 h2 {
-  font-size: 3.052rem;
+  font-size: 2.5rem;
 }
 @media (max-width: 1200px) {
   h2 {
-    font-size: calc(1.4302rem + 2.1624vw);
+    font-size: calc(1.375rem + 1.5vw);
   }
-}
-
-h3 {
-  font-size: 2.441rem;
-}
-@media (max-width: 1200px) {
-  h3 {
-    font-size: calc(1.3691rem + 1.4292vw);
-  }
-}
-
-h4 {
-  font-size: 1.953rem;
-}
-@media (max-width: 1200px) {
-  h4 {
-    font-size: calc(1.3203rem + 0.8436vw);
-  }
-}
-
-h5 {
-  font-size: 1.563rem;
-}
-@media (max-width: 1200px) {
-  h5 {
-    font-size: calc(1.2813rem + 0.3756vw);
-  }
-}
-
-h6 {
-  font-size: 1.25rem;
 }
 
 p {
@@ -419,46 +368,50 @@ textarea {
   font-weight: normal;
 }
 
-/* Typography SON */
-/* Z-index */
-.mf-cursor {
+.anchor {
+  font-size: 1.125rem;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.eleman {
   z-index: 99;
 }
 
-.modal {
+.eleman {
   z-index: 98;
 }
 
-.popup {
+.eleman {
   z-index: 97;
 }
 
-.sidebar {
+.eleman {
   z-index: 96;
 }
 
-.toast {
+.eleman {
   z-index: 95;
 }
 
-.no-js {
+.eleman {
   z-index: 94;
 }
 
-.go-top {
+.eleman {
   z-index: 93;
 }
 
-.header {
+.eleman {
   z-index: 92;
 }
 
-.buton {
+.eleman {
   z-index: 91;
 }
 
-/* Z-index SON */
-/* Layout */
 * {
   scroll-margin-top: 1.5rem;
 }
@@ -501,28 +454,6 @@ template,
   }
 }
 
-/* Layout SON */
-/* 
-/////////////////////////////////////
-	Base SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Layout
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Layout SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Components
-/////////////////////////////////////
-*/
-/* Butonlar */
 .buton {
   padding: 0.5rem 1rem;
   margin: 0.5rem;
@@ -586,8 +517,6 @@ template,
   }
 }
 
-/* Butonlar SON */
-/* Çerez Popup */
 .cerez-popup {
   margin: 2rem;
   padding: 1rem 2rem;
@@ -661,8 +590,6 @@ template,
   border-bottom-color: #5900ff;
 }
 
-/* Çerez Popup SON */
-/* Kolonlar */
 .kolonlar {
   width: 100%;
   display: flex;
@@ -781,8 +708,6 @@ template,
   page-break-inside: avoid;
 }
 
-/* Kolonlar SON */
-/* No Js */
 .no-js {
   position: fixed;
   top: 0;
@@ -880,7 +805,6 @@ template,
   }
 }
 
-/* No Js SON */
 .go-top {
   font-size: 1rem;
   position: fixed;
@@ -1183,7 +1107,7 @@ input[type=number] {
 }
 .input__after::after {
   content: "";
-  background-color: #eff3f4;
+  background-color: #ffffff;
   width: 100%;
   height: 8px;
   display: block;
@@ -1294,34 +1218,4 @@ input[type=number] {
 
 .radio__label-kutu {
   border-radius: 50%;
-}
-
-/* 
-/////////////////////////////////////
-	Components SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Pages
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Pages SON
-/////////////////////////////////////
-*/
-/* 
-/////////////////////////////////////
-	Themes
-/////////////////////////////////////
-*/
-/* Dark */
-/* Dark SON */
-/* Defaut */
-/* Defaut SON */
-/* 
-/////////////////////////////////////
-	Themes SON
-/////////////////////////////////////
-*//*# sourceMappingURL=main.min.css.map */
+}/*# sourceMappingURL=main.min.css.map */
