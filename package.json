@@ -1,8 +1,8 @@
 {
-	"name": "html-dosya-yapim",
-	"version": "1.6.0",
-	"homepage": "http://drementer.com",
-	"description": "Projelerim için kalıp",
+	"name": "dust-store",
+	"version": "1.0.0",
+	"homepage": "",
+	"description": "Dust Store Web Page",
 	"main": "",
 	"scripts": {
 		"": ""
@@ -14,7 +14,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/drementer/html-dosya-yapim.git"
+		"url": "git+https://github.com/drementer/dust-store.git"
 	},
 	"author": {
 		"name": "drementer",
