@@ -31,3 +31,11 @@ template,
 		@include padding(2rem 1rem);
 	}
 }
+
+h1,
+h2,
+span,
+p,
+label{
+	color: $aksan;
+}
