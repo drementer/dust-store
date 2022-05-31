@@ -466,11 +466,14 @@ template,
 }
 
 h1,
-h2,
+h2 {
+  color: #415078;
+}
+
 span,
 p,
 label {
-  color: #415078;
+  color: #c0ac9f;
 }
 
 .header {
@@ -486,32 +489,33 @@ label {
     padding: calc(1.325rem + 0.9vw);
   }
 }
+.header__logo, .header__user {
+  flex-grow: 1;
+  flex-basis: 0;
+}
 .header__logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  flex-grow: 1;
 }
 .header__logo img {
   height: 2rem;
 }
-.header .nav {
-  flex-grow: 2;
-}
 .header__user {
-  flex-grow: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
 }
 .header__user .buton {
   padding: 0.75rem;
 }
 .header__user img {
   height: 2rem;
+}
+.header .nav {
+  flex-grow: 2;
 }
 
 .nav {
@@ -520,7 +524,10 @@ label {
   align-items: center;
   align-content: center;
   justify-content: center;
-  gap: 2rem;
+}
+.nav .buton:hover {
+  background-color: rgba(192, 172, 159, 0.9);
+  color: #ffffff;
 }
 
 .buton {
