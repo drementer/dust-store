@@ -324,8 +324,14 @@ h2 {
   }
 }
 
+h1,
+h2 {
+  font-weight: 700;
+}
+
 p {
   font-size: 1rem;
+  font-weight: 400;
 }
 
 label {
@@ -370,10 +376,12 @@ textarea {
 
 .anchor {
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .small {
   font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .eleman {
@@ -457,6 +465,14 @@ template,
   }
 }
 
+h1,
+h2,
+span,
+p,
+label {
+  color: #415078;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -474,8 +490,11 @@ template,
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-grow: 1;
+}
+.header__logo img {
+  height: 2rem;
 }
 .header .nav {
   flex-grow: 2;
@@ -501,7 +520,7 @@ template,
   align-items: center;
   align-content: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .buton {
@@ -515,7 +534,7 @@ template,
   text-transform: capitalize;
   outline: none;
   border: 1px solid transparent;
-  background-color: #C0AC9F;
+  background-color: #c0ac9f;
   color: #ffffff;
   cursor: pointer;
   vertical-align: middle;
@@ -532,14 +551,14 @@ template,
 }
 .buton.buton--hayalet {
   background-color: transparent;
-  color: #5900ff;
+  color: rgba(192, 172, 159, 0.9);
 }
 .buton.buton--hayalet:hover {
   border-color: currentColor;
 }
 .buton.buton--link {
   background-color: transparent;
-  color: #5900ff;
+  color: #c0ac9f;
   margin: 0;
   padding: 0;
 }
@@ -1263,7 +1282,7 @@ input[type=number] {
 .pill {
   padding: 0.5rem 0.875rem;
   background-color: #ffffff;
-  color: #C0AC9F;
+  color: #c0ac9f;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1277,12 +1296,12 @@ input[type=number] {
 }
 
 *::-moz-selection {
-  background-color: #C0AC9F;
+  background-color: #c0ac9f;
   color: #ffffff;
 }
 
 *::selection {
-  background-color: #C0AC9F;
+  background-color: #c0ac9f;
   color: #ffffff;
 }
 
