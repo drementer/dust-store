@@ -1,10 +1,11 @@
 .pill {
 	@include padding(0.5rem 0.875rem);
-	background-color: $aksan-10;
+	background-color: $beyaz;
 	color: $ana-renk;
 	display: block;
 	width: fit-content;
 	border-radius: 5rem;
+	text-transform: capitalize;
 
 	&--2{
 		background-color: $ana-renk-10;
