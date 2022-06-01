@@ -10,6 +10,8 @@
 	transition: all 150ms ease-out;
 	transition-delay: 400ms;
 
+	@extend %golge;
+
 	& + & {
 		margin-top: 1rem;
 	}
