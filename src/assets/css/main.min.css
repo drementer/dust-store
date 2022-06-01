@@ -453,6 +453,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  transition: background-color 150ms ease-out;
 }
 
 template,
@@ -615,27 +616,79 @@ main {
     margin-right: calc(1.425rem + 2.1vw);
   }
 }
-.urun__gorsel {
+.urun__gorseller {
   height: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: 5rem;
+  width: 20rem;
 }
 @media (max-width: 1200px) {
-  .urun__gorsel {
+  .urun__gorseller {
     margin-left: calc(1.625rem + 4.5vw);
   }
 }
-.urun__gorsel img {
+.urun__gorsel {
   height: 100%;
   width: auto;
   max-width: unset;
   display: block;
-  /* 			left: 0;
-  top: 0;
+  position: relative;
   position: absolute;
-  height: 100%; */
+  transition: all 250ms ease-out;
+}
+.urun__gorsel {
+  transform: translateX(200%);
+  opacity: 0;
+}
+.urun__gorsel.aktif {
+  -webkit-animation: giris 250ms ease-out 500ms forwards;
+          animation: giris 250ms ease-out 500ms forwards;
+}
+.urun__gorsel.pasif {
+  -webkit-animation: cikis 250ms ease-out forwards;
+          animation: cikis 250ms ease-out forwards;
+}
+@-webkit-keyframes giris {
+  from {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes giris {
+  from {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes cikis {
+  to {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes cikis {
+  to {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .urun__bilgileri {
   position: absolute;
@@ -663,7 +716,6 @@ main {
 
 .cc {
   padding: 2rem;
-  padding-bottom: 0;
 }
 @media (max-width: 1200px) {
   .cc {
@@ -676,6 +728,7 @@ main {
     align-items: flex-end;
     justify-content: flex-end;
     margin-bottom: 3rem;
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -1523,9 +1576,16 @@ input[type=number] {
   position: relative;
   overflow: hidden;
   display: block;
+  opacity: 0.7;
+  transition: all 150ms ease-out;
+  transition-delay: 400ms;
 }
 .urun-kart + .urun-kart {
   margin-top: 1rem;
+}
+.urun-kart.aktif {
+  opacity: 1;
+  height: 13rem;
 }
 .urun-kart.buton {
   background-color: rgba(192, 172, 159, 0.2);
