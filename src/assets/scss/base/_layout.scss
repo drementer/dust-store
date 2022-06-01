@@ -19,6 +19,7 @@ html {
 body {
 	@include flex-column;
 	overflow-x: hidden;
+	transition: background-color 150ms ease-out;
 }
 
 template,
