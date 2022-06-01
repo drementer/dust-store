@@ -36,6 +36,28 @@
     /* 4 */
   }
 }
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  -webkit-animation-delay: -1ms !important;
+          animation-delay: -1ms !important;
+  /* 1 */
+  -webkit-animation-duration: 1ms !important;
+          animation-duration: 1ms !important;
+  /* 1 */
+  -webkit-animation-iteration-count: 1 !important;
+          animation-iteration-count: 1 !important;
+  /* 1 */
+  background-attachment: initial !important;
+  /* 2 */
+  scroll-behavior: auto !important;
+  /* 3 */
+  transition-delay: 0s !important;
+  /* 4 */
+  transition-duration: 0s !important;
+  /* 4 */
+}
+
 .mf-cursor {
   position: fixed;
   top: 0;
