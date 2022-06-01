@@ -52,11 +52,14 @@ h2 {
 	font-weight: 700;
 }
 
+h1 {
+	line-height: 1;
+}
+
 p {
 	@include font-size(1rem);
 	font-weight: 400;
 }
-
 
 label {
 	@include font-size(0.875rem);
