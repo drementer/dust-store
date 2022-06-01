@@ -329,6 +329,10 @@ h2 {
   font-weight: 700;
 }
 
+h1 {
+  line-height: 1;
+}
+
 p {
   font-size: 1rem;
   font-weight: 400;
@@ -428,15 +432,23 @@ textarea {
   scroll-margin-top: 1.5rem;
 }
 
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  max-width: 1920px;
+  margin: auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
 }
 
 template,
@@ -478,6 +490,33 @@ span,
 p,
 label {
   color: #c0ac9f;
+}
+
+main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "hero slider" "cc slider";
+}
+@media screen and (max-width: 1400px) {
+  main {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "hero" "slider" "cc";
+  }
+}
+
+.urun-slider {
+  grid-area: slider;
+}
+
+.cc {
+  grid-area: cc;
+}
+
+.hero {
+  grid-area: hero;
 }
 
 .header {
@@ -532,6 +571,143 @@ label {
 .nav .buton:hover {
   background-color: rgba(192, 172, 159, 0.9);
   color: #ffffff;
+}
+
+.urun-slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media screen and (min-width: 1400px) {
+  .urun-slider {
+    justify-content: flex-end;
+  }
+}
+
+.urun {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 3rem;
+}
+@media (max-width: 1200px) {
+  .urun {
+    margin-right: calc(1.425rem + 2.1vw);
+  }
+}
+.urun__gorsel {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 5rem;
+}
+@media (max-width: 1200px) {
+  .urun__gorsel {
+    margin-left: calc(1.625rem + 4.5vw);
+  }
+}
+.urun__gorsel img {
+  height: 100%;
+  width: auto;
+  max-width: unset;
+  display: block;
+  /* 			left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%; */
+}
+.urun__bilgileri {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+}
+.urun__bilgileri span {
+  display: block;
+  text-transform: capitalize;
+}
+.urun__bilgileri span:last-child {
+  color: #415078;
+}
+.urun__bilgi + .urun__bilgi {
+  margin-top: 1rem;
+}
+.urun-kartlar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cc {
+  padding: 2rem;
+}
+@media (max-width: 1200px) {
+  .cc {
+    padding: calc(1.325rem + 0.9vw);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .cc {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .cc p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .cc p {
+    width: 100%;
+    max-width: 45rem;
+  }
+}
+
+.hero {
+  padding: 2rem;
+}
+@media (max-width: 1200px) {
+  .hero {
+    padding: calc(1.325rem + 0.9vw);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .hero__icerik {
+    width: 100%;
+    max-width: 45rem;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .hero__icerik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}
+.hero .buton {
+  margin: 3rem 0;
+}
+@media (max-width: 1200px) {
+  .hero .buton {
+    margin: calc(1.425rem + 2.1vw) 0;
+  }
 }
 
 .buton {
@@ -1289,10 +1465,47 @@ input[type=number] {
   width: fit-content;
   border-radius: 5rem;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 .pill--2 {
   background-color: rgba(192, 172, 159, 0.9);
   color: #ffffff;
+}
+
+.urun-kart {
+  height: 10rem;
+  width: 20rem;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.urun-kart + .urun-kart {
+  margin-top: 1rem;
+}
+.urun-kart.buton {
+  background-color: rgba(192, 172, 159, 0.2);
+  padding: 0;
+  border: none;
+}
+.urun-kart__gorsel {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  transform-origin: top left;
+  transform: scale(0.6);
+}
+.urun-kart__baslik {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+@media (max-width: 1200px) {
+  .urun-kart__baslik {
+    font-size: calc(1.275rem + 0.3vw);
+  }
 }
 
 *::-moz-selection {
