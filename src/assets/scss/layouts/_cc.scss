@@ -1,5 +1,6 @@
 .cc {
 	@include padding(2rem);
+	padding-bottom: 0;
 
 	@include min-medya(ul) {
 		@include flex;
