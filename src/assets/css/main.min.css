@@ -493,11 +493,15 @@ label {
 }
 
 main {
-  flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas: "hero slider" "cc slider";
+}
+@media screen and (max-width: 1920px) {
+  main {
+    flex-grow: 1;
+  }
 }
 @media screen and (max-width: 1400px) {
   main {
@@ -532,6 +536,14 @@ main {
     padding: calc(1.325rem + 0.9vw);
   }
 }
+@media screen and (max-width: 1200px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "logo user" "nav nav";
+  }
+}
 .header__logo, .header__user {
   flex-grow: 1;
   flex-basis: 0;
@@ -541,6 +553,7 @@ main {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  grid-area: logo;
 }
 .header__logo img {
   height: 2rem;
@@ -550,6 +563,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  grid-area: user;
 }
 .header__user .buton {
   padding: 0.75rem;
@@ -559,6 +573,7 @@ main {
 }
 .header .nav {
   flex-grow: 2;
+  grid-area: nav;
 }
 
 .nav {
