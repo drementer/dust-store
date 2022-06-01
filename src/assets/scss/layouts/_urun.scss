@@ -3,19 +3,54 @@
 	width: fit-content;
 	@include margin-right(3rem);
 
-	&__gorsel {
+	&__gorseller {
 		height: 100%;
 		width: fit-content;
 		@include margin-left(5rem);
-		img {
-			height: 100%;
-			width: auto;
-			max-width: unset;
-			display: block;
-			/* 			left: 0;
-			top: 0;
-			position: absolute;
-			height: 100%; */
+		width: 20rem;
+	}
+
+	&__gorsel {
+		height: 100%;
+		width: auto;
+		max-width: unset;
+		display: block;
+		position: relative;
+		position: absolute;
+		transition: all 250ms ease-out;
+
+		& {
+			transform: translateX(200%);
+			opacity: 0;
+		}
+
+		&.aktif {
+			animation: giris 250ms ease-out 500ms forwards;
+		}
+		&.pasif {
+			animation: cikis 250ms ease-out forwards;
+		}
+
+		@keyframes giris {
+			from {
+				transform: translateX(200%);
+				opacity: 0;
+			}
+			to {
+				transform: translateX(0);
+				opacity: 1;
+			}
+		}
+
+		@keyframes cikis {
+			to {
+				transform: translateX(200%);
+				opacity: 0;
+			}
+			from {
+				transform: translateX(0);
+				opacity: 1;
+			}
 		}
 	}
 

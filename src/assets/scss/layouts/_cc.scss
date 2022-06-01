@@ -1,12 +1,12 @@
 .cc {
 	@include padding(2rem);
-	padding-bottom: 0;
 
 	@include min-medya(ul) {
 		@include flex;
 		align-items: flex-end;
 		justify-content: flex-end;
 		margin-bottom: 3rem;
+		padding-bottom: 0;
 	}
 
 	p {

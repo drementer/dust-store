@@ -6,8 +6,17 @@
 	overflow: hidden;
 	display: block;
 
+	opacity: 0.7;
+	transition: all 150ms ease-out;
+	transition-delay: 400ms;
+
 	& + & {
 		margin-top: 1rem;
+	}
+
+	&.aktif {
+		opacity: 1;
+		height: 13rem;
 	}
 
 	&.buton {
