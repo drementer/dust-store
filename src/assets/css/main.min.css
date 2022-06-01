@@ -70,6 +70,7 @@
 .mf-cursor:before {
   content: "";
   position: absolute;
+  color: #415078;
   top: -24px;
   left: -24px;
   display: block;
@@ -80,19 +81,26 @@
   border-radius: 50%;
   transition: transform 0.25s ease-in-out, opacity 0.1s;
 }
+.mf-cursor.-active:before {
+  transform: scale(0.3);
+  transition-duration: 0.2s;
+}
 .mf-cursor.-inverse {
-  color: white;
+  color: #beaf87;
+}
+.mf-cursor.-inverse::before {
+  color: #beaf87;
 }
 @supports (mix-blend-mode: exclusion) {
   .mf-cursor.-exclusion {
     mix-blend-mode: exclusion;
   }
   .mf-cursor.-exclusion:before {
-    background: white;
+    background: #beaf87;
   }
 }
 .mf-cursor.-pointer:before {
-  transform: scale(0.15);
+  transform: scale(0.3);
 }
 .mf-cursor.-text:before {
   opacity: 0.85;
@@ -122,7 +130,7 @@
   justify-content: center;
   transform: scale(0) rotate(10deg);
   opacity: 0;
-  color: #fff;
+  color: white;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
@@ -580,6 +588,7 @@ main {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
   grid-area: logo;
 }
 .header__logo img {
