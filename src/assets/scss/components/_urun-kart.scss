@@ -1,0 +1,34 @@
+.urun-kart {
+	height: 10rem;
+	width: 20rem;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	display: block;
+
+	& + & {
+		margin-top: 1rem;
+	}
+
+	&.buton {
+		background-color: rgba($ana-renk, 0.2);
+		padding: 0;
+		border: none;
+	}
+
+	&__gorsel {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		transform-origin: top left;
+		transform: scale(0.6);
+	}
+
+	&__baslik {
+		position: absolute;
+		top: 1rem;
+		right: 1.5rem;
+		@include font-size(1.5rem);
+		font-weight: 700;
+	}
+}
