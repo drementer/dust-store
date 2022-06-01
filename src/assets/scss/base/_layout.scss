@@ -52,7 +52,10 @@ label {
 }
 
 main {
-	flex-grow: 1;
+	@include medya(1920px) {
+		flex-grow: 1;
+	}
+
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
