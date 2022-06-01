@@ -1,0 +1,27 @@
+.hero {
+	@include padding(2rem);
+
+	@include min-medya(ul) {
+		@include flex-column;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	&__icerik {
+		@include min-medya(ul) {
+			width: 100%;
+			max-width: 45rem;
+		}
+
+		@include medya(ul) {
+			@include flex-column;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+		}
+	}
+
+	.buton {
+		@include margin(3rem 0);
+	}
+}

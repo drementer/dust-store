@@ -1,0 +1,21 @@
+.cc {
+	@include padding(2rem);
+
+	@include min-medya(ul) {
+		@include flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		margin-bottom: 3rem;
+	}
+
+	p {
+		@include medya(ul) {
+			text-align: center;
+		}
+
+		@include min-medya(ul) {
+			width: 100%;
+			max-width: 45rem;
+		}
+	}
+}

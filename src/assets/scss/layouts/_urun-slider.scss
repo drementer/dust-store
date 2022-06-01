@@ -1,0 +1,8 @@
+.urun-slider {
+	@include flex-row;
+	justify-content: center;
+
+	@include min-medya(ul) {
+		justify-content: flex-end;
+	}
+}
