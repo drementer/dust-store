@@ -3,17 +3,30 @@
 	@include padding(1rem 2rem);
 	@include flex-row;
 	@extend %golge;
+	overflow: hidden;
 
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	background-color: $no-js__arkaplan;
-	border-right: 3px solid $mor;
+
+	border-right: 3px solid $aksan;
 	align-items: center;
 	justify-content: flex-end;
 	flex-wrap: wrap;
 	gap: 1em;
+	background-color: rgba($ana-renk, $alpha: 0.5);
 
+	@supports (backdrop-filter: blur(50px)) {
+		& {
+			backdrop-filter: blur(50px);
+		}
+	}
+
+	@supports not (backdrop-filter: blur(50px)) {
+		& {
+			background-color: #eff3f4;
+		}
+	}
 
 	@include medya(xl) {
 		bottom: 1em;
@@ -22,12 +35,13 @@
 		margin: 0;
 		justify-content: center;
 		border-right: none;
-		border-top: 3px solid $mor;
+		border-top: 3px solid $aksan;
 	}
 
 	&__butonlar {
 		@include flex-center-row;
 		flex-wrap: wrap;
+		gap: 1rem;
 	}
 
 	&__icerik {
@@ -44,6 +58,7 @@
 
 		p {
 			text-indent: 0.6em;
+			color: $aksan;
 			width: 100%;
 		}
 
@@ -53,14 +68,14 @@
 
 			text-transform: capitalize;
 			display: inline-block;
-			color: $mor;
+			color: $aksan;
 			border-bottom: 1px solid transparent;
 			transition: none;
 		}
 
 		&:hover {
 			span {
-				border-bottom-color: $mor;
+				border-bottom-color: $aksan;
 			}
 		}
 	}
