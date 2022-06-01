@@ -1,5 +1,5 @@
-$mf-color-base: #000 !default;
-$mf-color-text: #fff !default;
+$mf-color-base: #415078 !default;
+$mf-color-text: white !default;
 
 .mf-cursor {
 	$root: &;
@@ -17,6 +17,7 @@ $mf-color-text: #fff !default;
 	&:before {
 		content: "";
 		position: absolute;
+		color: $mf-color-base;
 		top: -24px;
 		left: -24px;
 		display: block;
@@ -30,8 +31,19 @@ $mf-color-text: #fff !default;
 		transition: transform 0.25s ease-in-out, opacity 0.1s;
 	}
 
+	&.-active {
+		&:before {
+			transform: scale(0.3);
+			transition-duration: 0.2s;
+		}
+	}
+
 	&.-inverse {
 		color: invert($mf-color-base);
+
+		&::before {
+			color: invert($mf-color-base);
+		}
 	}
 
 	&.-exclusion {
@@ -46,7 +58,7 @@ $mf-color-text: #fff !default;
 
 	&.-pointer {
 		&:before {
-			transform: scale(0.15);
+			transform: scale(0.3);
 		}
 	}
 
