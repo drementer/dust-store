@@ -124,8 +124,38 @@
 			<div class="urun">
 				
 				<!-- Görsel -->
-				<div class="urun__gorsel">
-					<img src="assets/img/urun-1.png" alt="urun görseli">
+				<div class="urun__gorseller">
+
+					<!-- Görsel -->
+					<a href="#">
+						<img class="urun__gorsel aktif" 
+						title="ceket 1" 
+						src="assets/img/urun-1.png" 
+						data-tema="#F3EEEE"
+						data-cursor-text="Look Close!"
+						alt="urun görseli">
+					</a>
+
+					<!-- Görsel -->
+					<a href="#">
+						<img 
+						class="urun__gorsel" 
+						title="ceket 2" 
+						src="assets/img/urun-2.png"
+						data-tema="#eef1f3"
+						data-cursor-text="Look Close!"
+						alt="urun görseli">
+					</a>
+
+					<!-- Görsel -->
+					<a href="#">
+						<img 
+						class="urun__gorsel" 
+						title="ceket 3" 
+						src="assets/img/urun-1.png" 
+						data-cursor-text="Look Close!"
+						alt="urun görseli">
+					</a>
 				</div>
 
 				<!-- Bilgiler -->
@@ -152,23 +182,16 @@
 			<!-- Kartlar -->
 			<div class="urun-kartlar">
 
-				<!-- Kart -->
-				<button class="urun-kart buton buton--hayalet">
-					<img class="urun-kart__gorsel" src="assets/img/urun-1.png" alt="urun kart görsel">
-					<div class="urun-kart__baslik">ceket</div>
-				</button>
+				<!-- Kart Demo -->
+				<template id="urun-kart-demo" class="urun-kart-demo">
+					<!-- Kart -->
+					<button data-cursor-text="Choose" class="urun-kart buton buton--hayalet">
+						<img class="urun-kart__gorsel" src="assets/img/urun-1.png" alt="urun kart görsel">
+						<div class="urun-kart__baslik">ceket</div>
+					</button>
+				</template>
+				<!-- Kart Demo -->
 
-				<!-- Kart -->
-				<button class="urun-kart buton buton--hayalet">
-					<img class="urun-kart__gorsel" src="assets/img/urun-1.png" alt="urun kart görsel">
-					<div class="urun-kart__baslik">test test</div>
-				</button>
-
-				<!-- Kart -->
-				<button class="urun-kart buton buton--hayalet">
-					<img class="urun-kart__gorsel" src="assets/img/urun-1.png" alt="urun kart görsel">
-					<div class="urun-kart__baslik">test test</div>
-				</button>
 			</div>
 		</section>
 		<!-- Slider -->
