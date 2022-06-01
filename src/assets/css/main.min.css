@@ -404,28 +404,32 @@ textarea {
   z-index: 96;
 }
 
-.sidebar {
+.cerez-popup {
   z-index: 95;
 }
 
-.toast {
+.sidebar {
   z-index: 94;
 }
 
-.no-js {
+.toast {
   z-index: 93;
 }
 
-.go-top {
+.no-js {
   z-index: 92;
 }
 
-.header {
+.go-top {
   z-index: 91;
 }
 
-.buton {
+.header {
   z-index: 90;
+}
+
+.buton {
+  z-index: 89;
 }
 
 * {
@@ -659,6 +663,7 @@ main {
 
 .cc {
   padding: 2rem;
+  padding-bottom: 0;
 }
 @media (max-width: 1200px) {
   .cc {
@@ -751,6 +756,16 @@ main {
 .buton:hover {
   background-color: #beaa9c;
 }
+.buton.buton--2 {
+  background-color: transparent;
+  color: #c0ac9f;
+  border-color: currentColor;
+}
+.buton.buton--2:hover {
+  background-color: rgba(192, 172, 159, 0.9);
+  color: #ffffff;
+  border-color: transparent;
+}
 .buton.buton--hayalet {
   background-color: transparent;
   color: rgba(192, 172, 159, 0.9);
@@ -783,15 +798,16 @@ main {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #f9faff;
-  border-right: 3px solid #5900ff;
+  border-right: 3px solid #415078;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 1em;
+  background-color: rgba(192, 172, 159, 0.5);
 }
 @media (max-width: 1200px) {
   .cerez-popup {
@@ -803,6 +819,17 @@ main {
     padding: 1rem calc(1.325rem + 0.9vw);
   }
 }
+@supports ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+  .cerez-popup {
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+  }
+}
+@supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+  .cerez-popup {
+    background-color: #eff3f4;
+  }
+}
 @media screen and (max-width: 1200px) {
   .cerez-popup {
     bottom: 1em;
@@ -811,7 +838,7 @@ main {
     margin: 0;
     justify-content: center;
     border-right: none;
-    border-top: 3px solid #5900ff;
+    border-top: 3px solid #415078;
   }
 }
 .cerez-popup__butonlar {
@@ -821,6 +848,7 @@ main {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 .cerez-popup__icerik {
   font-size: 1rem;
@@ -836,6 +864,7 @@ main {
 }
 .cerez-popup__icerik p {
   text-indent: 0.6em;
+  color: #415078;
   width: 100%;
 }
 .cerez-popup__icerik span {
@@ -843,12 +872,12 @@ main {
   margin-top: 0.5rem;
   text-transform: capitalize;
   display: inline-block;
-  color: #5900ff;
+  color: #415078;
   border-bottom: 1px solid transparent;
   transition: none;
 }
 .cerez-popup__icerik:hover span {
-  border-bottom-color: #5900ff;
+  border-bottom-color: #415078;
 }
 
 .kolonlar {
