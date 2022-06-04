@@ -1,0 +1,38 @@
+.swiper {
+	--swiper-theme-color: #{$aksan};
+
+	margin-top: auto;
+	max-height: 100%;
+	margin: unset !important;
+	padding: 1rem !important;
+
+	@include medya(md) {
+		width: 100%;
+		height: 27rem;
+	}
+
+	&-slide {
+		@include flex;
+
+		@include min-medya(md) {
+			height: fit-content !important;
+		}
+		@include medya(md) {
+			width: fit-content !important;
+			align-items: flex-end;
+			padding: 0 0.5rem;
+		}
+	}
+
+	&-slide + &-slide {
+		@include min-medya(md) {
+			margin-top: 1rem;
+		}
+	}
+
+	&-wrapper {
+		@include min-medya(ul) {
+			justify-content: var(--durum, "flex-start");
+		}
+	}
+}
