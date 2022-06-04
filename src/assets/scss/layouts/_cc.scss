@@ -2,7 +2,7 @@
 	@include padding(2rem);
 
 	@include medya(md) {
-		margin-top: auto
+		margin-top: auto;
 	}
 
 	@include min-medya(ul) {
@@ -13,9 +13,14 @@
 		padding-bottom: 0;
 	}
 
-	p {
+	&__icerik {
+		@include flex-column;
+		gap: 1rem;
+
 		@include medya(ul) {
-			text-align: center;
+			@include flex-row;
+			justify-content: space-between;
+			align-items: flex-end;
 		}
 
 		@include min-medya(ul) {
@@ -23,8 +28,28 @@
 			max-width: 45rem;
 		}
 
-		.buton--link{
-			vertical-align: baseline;
+		@include medya(md) {
+			@include flex-center-column;
 		}
+	}
+
+	&__eleman {
+		span {
+			display: block;
+		}
+
+		&:last-child {
+			@include medya(ul) {
+				text-align: right;
+			}
+		}
+
+		@include medya(md) {
+			text-align: center !important;
+		}
+	}
+
+	.buton--link {
+		vertical-align: baseline;
 	}
 }

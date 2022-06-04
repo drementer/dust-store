@@ -5,6 +5,7 @@ const sliders = () => {
 		ayarlar = {
 			slidesPerView: "auto",
 			centeredSlides: true,
+			mousewheel: true,
 			// Navigation arrows
 			navigation: {
 				nextEl: ".swiper-button-next",
