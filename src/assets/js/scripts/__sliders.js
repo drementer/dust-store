@@ -1,33 +1,26 @@
 const sliders = () => {
-	let ayarlar, slide, href, main, sub, sub_ayarlar;
+	let ayarlar, href;
 	document.addEventListener("DOMContentLoaded", function () {
 		/* Slide */
 		ayarlar = {
-			rewind: true,
+			slidesPerView: "auto",
+			centeredSlides: true,
+			// Navigation arrows
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			breakpoints: {
+				768: {
+					centeredSlides: false,
+					direction: "vertical",
+				},
+			},
 		};
-		href = document.querySelector("header .splide");
+
+		href = document.querySelector(".swiper");
 		if (href) {
-			slide = new Splide(href, ayarlar);
-			slide.mount();
-		}
-		/* Slide SON */
-
-		/* Slide */
-		ayarlar = {
-			type: "loop",
-		};
-		sub_ayarlar = {
-			fixedHeight: "auto",
-		};
-		main = document.querySelector(".ana-gorseller");
-		sub = document.querySelector(".sub-gorseller");
-		if (main && sub) {
-			main = new Splide(main, ayarlar);
-			sub = new Splide(sub, sub_ayarlar);
-
-			main.sync(sub);
-			main.mount();
-			sub.mount();
+			const swiper = new Swiper(href, ayarlar);
 		}
 		/* Slide SON */
 	});
