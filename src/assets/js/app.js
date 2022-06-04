@@ -19,7 +19,6 @@ cerez();
 
 // Sliders
 import sliders from "./scripts/__sliders.js";
-sliders();
 
 // Lazy Load
 import lazy_load from "./scripts/__lazy-load.js";
@@ -52,7 +51,7 @@ const urun_gorseller = doc.querySelectorAll(".urun__gorsel");
 urun_gorseller.forEach((urun_gorsel, i) => {
 	// Atamalar
 	const urun_kart_demo = doc.querySelector(".urun-kart-demo"),
-		urun_kart_kapsayici = doc.querySelector(".urun-kartlar");
+		urun_kart_kapsayici = doc.querySelector(".urun-kartlar__konteyner");
 
 	// Her görsele data-urun-id="i + 1" attr'si ekleniyor
 	urun_gorsel.setAttribute("data-urun-id", i + 1);
@@ -71,11 +70,11 @@ urun_kartlar.forEach((urun_kart, i) => {
 
 	// Gorsel bilgileri karta ekleniyor
 	let gorsel = urun_gorseller[i];
-	urun_kart.querySelector(".urun-kart__gorsel").src = gorsel.src;
+	urun_kart.querySelector(".urun-kart__gorsel").src =
+		gorsel.querySelector("img").src;
 	urun_kart.querySelector(".urun-kart__baslik").textContent = gorsel.title;
 
 	urun_kart.addEventListener("click", () => {
-
 		// Atamalar
 		let gorsel_id = urun_kart.dataset.urunId,
 			aktif_gorsel = doc.querySelector(".urun__gorsel.aktif"),
@@ -83,7 +82,7 @@ urun_kartlar.forEach((urun_kart, i) => {
 				`.urun__gorsel[data-urun-id='${gorsel_id}']`
 			),
 			aktif_kart = doc.querySelector(".urun-kart.aktif");
-		
+
 		aktif_kart.classList.remove("aktif");
 		urun_kart.classList.add("aktif");
 
@@ -107,3 +106,10 @@ urun_kartlar.forEach((urun_kart, i) => {
 });
 
 urun_kartlar[0].classList.add("aktif");
+sliders();
+
+let wrapper = doc.querySelector(".swiper-wrapper"),
+	wrapper_el = wrapper.querySelectorAll(".swiper-slide"),
+	durum;
+wrapper_el.length <= 4 ? (durum = "flex-end") : (durum = "flex-start");
+wrapper.style.setProperty("--durum", durum);
