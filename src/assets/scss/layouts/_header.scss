@@ -2,6 +2,10 @@
 	@include flex-center-row;
 	@include padding(2rem);
 
+	@include min-medya(ul) {
+		height: 7rem;
+	}
+
 	@include medya(xl) {
 		display: grid;
 		grid-template-columns: 1fr 1fr;

@@ -1,27 +1,34 @@
 .urun {
 	position: relative;
 	width: fit-content;
-	@include margin-right(3rem);
+	overflow: hidden;
+	height: 100%;
+
+	$p-r: 0rem;
+	$p-l: 5rem;
+	@include padding-right($p-r);
+	@include padding-left($p-l);
 
 	&__gorseller {
 		height: 100%;
-		width: fit-content;
-		@include margin-left(5rem);
 		width: 20rem;
 	}
 
 	&__gorsel {
 		height: 100%;
-		width: auto;
+		width: calc(100% - ($p-r + $p-l));
 		max-width: unset;
 		display: block;
 		position: relative;
 		position: absolute;
 		transition: all 250ms ease-out;
+		transform: translateX(100%);
+		opacity: 0;
 
-		& {
-			transform: translateX(200%);
-			opacity: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
 		}
 
 		&.aktif {
@@ -32,24 +39,24 @@
 		}
 
 		@keyframes giris {
-			from {
-				transform: translateX(200%);
+			0% {
+				transform: translateX(100%);
 				opacity: 0;
 			}
-			to {
+			100% {
 				transform: translateX(0);
 				opacity: 1;
 			}
 		}
 
 		@keyframes cikis {
-			to {
-				transform: translateX(200%);
-				opacity: 0;
-			}
-			from {
+			0% {
 				transform: translateX(0);
 				opacity: 1;
+			}
+			100% {
+				transform: translateX(200%);
+				opacity: 0;
 			}
 		}
 	}

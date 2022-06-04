@@ -1,6 +1,10 @@
 .cc {
 	@include padding(2rem);
 
+	@include medya(md) {
+		margin-top: auto
+	}
+
 	@include min-medya(ul) {
 		@include flex;
 		align-items: flex-end;
@@ -17,6 +21,10 @@
 		@include min-medya(ul) {
 			width: 100%;
 			max-width: 45rem;
+		}
+
+		.buton--link{
+			vertical-align: baseline;
 		}
 	}
 }

@@ -19,6 +19,10 @@
 	&.aktif {
 		opacity: 1;
 		height: 13rem;
+
+		@include medya(md) {
+			height: 12rem;
+		}
 	}
 
 	&.buton {

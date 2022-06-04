@@ -53,24 +53,19 @@ label {
 }
 
 main {
-	@include medya(1920px) {
-		flex-grow: 1;
+	@include min-medya(ul) {
+		height: calc(100% - 7rem);
 	}
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto auto;
+	grid-template-rows: 1fr auto;
 	grid-template-areas:
 		"hero slider"
 		"cc slider";
 
 	@include medya(ul) {
-		grid-template-columns: auto;
-		grid-template-rows: auto auto auto;
-		grid-template-areas:
-			"hero"
-			"slider"
-			"cc";
+		@include flex-column;
 	}
 }
 
