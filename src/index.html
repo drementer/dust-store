@@ -12,6 +12,8 @@
 
 	<!-- Css -->
 	<link rel="stylesheet" href="assets/css/main.min.css">
+		<!-- Swiper -->
+		<link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 
 	<!-- Sayfa bilgileri -->
 	<title>Dust Store</title>
@@ -117,55 +119,45 @@
 		</section>
 		<!-- Hero SON -->
 
-		<!-- CC -->
-		<section id="cc" class="cc">
-			<p>
-				Dust® has just arrived in Chile. <br>
-				The most anticipated menswear of the year. <br><br>
-				Design By <a class="buton buton--link" href="https://www.figma.com/community/file/919973170597141018">Cristopher Galarce</a> <br>
-				Developed By <a class="buton buton--link" href="https://github.com/drementer">drementer</a>
-			</p>
-		</section>
-		<!-- CC SON -->
-
 		<!-- Slider -->
 		<section id="urun-slider" class="urun-slider">
 			
-			<!-- Urun -->
+			<!-- Ürün -->
 			<div class="urun">
 				
 				<!-- Görsel -->
 				<div class="urun__gorseller">
 
 					<!-- Görsel -->
-					<a href="#">
-						<img class="urun__gorsel aktif" 
-						title="ceket 1" 
-						src="assets/img/urun-1.png" 
+					<a 
+						href="#" 
+						class="urun__gorsel aktif"
 						data-tema="#F3EEEE"
 						data-cursor-text="Look Close!"
-						alt="urun görseli">
+						title="ceket 1"
+					>
+						<img src="assets/img/urun-1.png" alt="urun görseli">
 					</a>
 
 					<!-- Görsel -->
-					<a href="#">
-						<img 
-						class="urun__gorsel" 
-						title="ceket 2" 
-						src="assets/img/urun-2.png"
+					<a 	
+						href="#" 
+						class="urun__gorsel"
 						data-tema="#eef1f3"
 						data-cursor-text="Look Close!"
-						alt="urun görseli">
+						title="ceket 2"
+					>
+						<img src="assets/img/urun-2.png" alt="urun görseli">
 					</a>
 
 					<!-- Görsel -->
-					<a href="#">
-						<img 
-						class="urun__gorsel" 
-						title="ceket 3" 
-						src="assets/img/urun-1.png" 
+					<a 
+						href="#" 
+						class="urun__gorsel"
 						data-cursor-text="Look Close!"
-						alt="urun görseli">
+						title="ceket 3"
+					>
+						<img src="assets/img/urun-1.png" alt="urun görseli">
 					</a>
 				</div>
 
@@ -190,20 +182,30 @@
 				</div>
 			</div>
 
-			<!-- Kartlar -->
-			<div class="urun-kartlar">
-
-				<!-- Kart Demo -->
-				<template id="urun-kart-demo" class="urun-kart-demo">
+			<!-- Ürün Kart Demo -->
+			<template id="urun-kart-demo" class="urun-kart-demo">
+				<div class="swiper-slide">
 					<!-- Kart -->
-					<button data-cursor-text="Choose" class="urun-kart buton buton--hayalet">
+					<div data-cursor-text="Choose" class="urun-kart buton buton--hayalet">
 						<img class="urun-kart__gorsel" src="assets/img/urun-1.png" alt="urun kart görsel">
 						<div class="urun-kart__baslik">ceket</div>
-					</button>
-				</template>
-				<!-- Kart Demo -->
+					</div>
+				</div>
+			</template>
 
+			<!-- Urun Kartlar Slider -->
+			<div class="urun-kartlar swiper">
+
+				<!-- Kartlar -->
+				<div class="urun-kartlar__konteyner swiper-wrapper">
+					<!-- Js ile otomatik doldurulacak -->
+				</div>
+
+				<!-- If we need navigation buttons -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 			</div>
+
 		</section>
 		<!-- Slider -->
 
@@ -211,10 +213,13 @@
 		<section id="cc" class="cc">
 			<p>
 				Dust® has just arrived in Chile. <br>
-				The most anticipated menswear of the year.
+				The most anticipated menswear of the year. <br><br>
+				Design By <a class="buton buton--link" href="https://www.figma.com/community/file/919973170597141018">Cristopher Galarce</a> <br>
+				Developed By <a class="buton buton--link" href="https://github.com/drementer">drementer</a>
 			</p>
 		</section>
 		<!-- CC SON -->
+
 	</main>
 	<!-- Uygulama SON -->
 
@@ -235,11 +240,13 @@
 	<!-- Çerez Popup SON -->
 
 	<!-- Js -->
-	<!-- Gsap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-	<script type="module" src="assets/js/app.js"></script>
+	<script type="module" src="assets/js/app.js" defer></script>
+		<!-- Gsap -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 		<!-- Ion Icon -->
 		<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<!-- Swiper -->
+		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 </body>
 </html>
