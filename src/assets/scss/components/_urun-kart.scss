@@ -7,28 +7,29 @@
 	display: block;
 
 	opacity: 0.7;
-	transition: all 150ms ease-out;
+	transition: height 150ms ease-out, opacity 150ms ease-out;
 	transition-delay: 400ms;
 
-	@extend %golge;
+	border: 1px solid transparent;
+
+	/* @extend %golge; */
 
 	& + & {
 		margin-top: 1rem;
 	}
 
-	&.aktif {
-		opacity: 1;
-		height: 13rem;
-
-		@include medya(md) {
-			height: 12rem;
-		}
-	}
-
 	&.buton {
 		background-color: rgba($ana-renk, 0.2);
 		padding: 0;
-		border: none;
+	}
+
+	&.aktif {
+		opacity: 1;
+		border: 1px solid rgba($aksan, 1) !important;
+
+		@include min-medya(ul) {
+			height: 13rem;
+		}
 	}
 
 	&__gorsel {
