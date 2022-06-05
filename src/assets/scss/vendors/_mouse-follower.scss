@@ -161,4 +161,16 @@ $mf-color-text: white !default;
 			}
 		}
 	}
+
+	&.-kapla {
+		transform: scale(1) rotate(0deg);
+
+		&::before {
+			transform: scale(1);
+
+			width: var(--w);
+			height: var(--h);
+			border-radius: 0;
+		}
+	}
 }
