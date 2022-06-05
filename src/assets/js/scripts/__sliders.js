@@ -5,16 +5,19 @@ const sliders = () => {
 		ayarlar = {
 			slidesPerView: "auto",
 			centeredSlides: true,
-			mousewheel: true,
-			// Navigation arrows
+			mousewheel: false,
+			allowTouchMove: false,
+
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
 			},
+			
 			breakpoints: {
 				768: {
 					centeredSlides: false,
 					direction: "vertical",
+					slidesPerView: 3,
 				},
 			},
 		};
