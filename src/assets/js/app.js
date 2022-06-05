@@ -30,7 +30,6 @@ form_elemanlari();
 
 // Cursor
 import cursor from "./components/__cursor.js";
-cursor();
 
 // Go Top
 import got_to_top from "./components/__go-top.js";
@@ -74,6 +73,13 @@ urun_kartlar.forEach((urun_kart, i) => {
 		gorsel.querySelector("img").src;
 	urun_kart.querySelector(".urun-kart__baslik").textContent = gorsel.title;
 
+	// Aktif görselin kutu aktif ediliyor
+	gorsel.classList.contains("aktif") ? urun_kart.classList.add("aktif") : "";
+
+	// Swiper Hash Navigation için üst elemente data-urun-id="i" attr'si ekleniyor
+	urun_kart.parentElement.dataset.hash = `urun-${i + 1}`;
+
+	// Tıklandığında
 	urun_kart.addEventListener("click", () => {
 		// Atamalar
 		let gorsel_id = urun_kart.dataset.urunId,
@@ -81,7 +87,8 @@ urun_kartlar.forEach((urun_kart, i) => {
 			gorsel = doc.querySelector(
 				`.urun__gorsel[data-urun-id='${gorsel_id}']`
 			),
-			aktif_kart = doc.querySelector(".urun-kart.aktif");
+			aktif_kart = doc.querySelector(".urun-kart.aktif"),
+			tema;
 
 		aktif_kart.classList.remove("aktif");
 		urun_kart.classList.add("aktif");
@@ -97,19 +104,21 @@ urun_kartlar.forEach((urun_kart, i) => {
 		gorsel.classList.add("aktif");
 		gorsel.classList.contains("pasif") && gorsel.classList.remove("pasif");
 
-		let tema;
-
+		// Görselin tema attr'si varsa sayfa arkaplanını o renkle güncelliyor
 		gorsel.dataset.tema ? (tema = gorsel.dataset.tema) : (tema = "#F3EEEE");
-
 		body.style.backgroundColor = tema;
 	});
 });
 
-urun_kartlar[0].classList.add("aktif");
+// İşlemlerin ardından slider ve cursor aktif ediliyor
 sliders();
+cursor();
 
+// Atamalar
 let wrapper = doc.querySelector(".swiper-wrapper"),
 	wrapper_el = wrapper.querySelectorAll(".swiper-slide"),
 	durum;
+
+// Kart sayısına göre kart yerleşimi düzenleniyor
 wrapper_el.length <= 4 ? (durum = "flex-end") : (durum = "flex-start");
 wrapper.style.setProperty("--durum", durum);
