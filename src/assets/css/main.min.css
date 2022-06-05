@@ -183,7 +183,7 @@
   transition-delay: 0s, 0s;
 }
 
-.urun-kart, .no-js, .cerez-popup {
+.no-js, .cerez-popup {
   box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014), 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026), 100px 100px 80px rgba(0, 0, 0, 0.04);
 }
 
@@ -469,10 +469,15 @@ textarea {
 html,
 body {
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
   max-width: 1920px;
   margin: auto;
+}
+@media screen and (min-width: 1400px) {
+  html,
+body {
+    height: 100vh;
+    max-height: 100vh;
+  }
 }
 
 html {
@@ -623,6 +628,9 @@ main {
   align-content: center;
   justify-content: center;
 }
+.nav .buton {
+  border-color: transparent !important;
+}
 .nav .buton:hover {
   background-color: rgba(192, 172, 159, 0.9);
   color: #ffffff;
@@ -656,7 +664,6 @@ main {
   width: -moz-fit-content;
   width: fit-content;
   overflow: hidden;
-  height: 100%;
   padding-right: 0rem;
   padding-left: 5rem;
 }
@@ -665,9 +672,26 @@ main {
     padding-left: calc(1.625rem + 4.5vw);
   }
 }
+@media screen and (max-width: 768px) {
+  .urun {
+    margin: 0 2rem;
+    width: calc(100% - 4rem);
+    height: 171rem;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 1200px) {
+  .urun {
+    margin: 0 calc(1.325rem + 0.9vw);
+  }
+}
 .urun__gorseller {
   height: 100%;
-  width: 20rem;
+  width: 22rem;
+}
+@media screen and (max-width: 768px) {
+  .urun__gorseller {
+    width: calc(100% - 5rem);
+  }
 }
 .urun__gorsel {
   height: 100%;
@@ -760,6 +784,7 @@ main {
 
 .cc {
   padding: 2rem;
+  background: conic-gradient(from 90deg at 45% 0, rgba(0, 0, 0, 0), rgba(192, 172, 159, 0.4) 50%);
 }
 @media (max-width: 1200px) {
   .cc {
@@ -769,6 +794,7 @@ main {
 @media screen and (max-width: 768px) {
   .cc {
     margin-top: auto;
+    background: conic-gradient(from 90deg at 75% 0, rgba(0, 0, 0, 0), rgba(192, 172, 159, 0.4) 50%);
   }
 }
 @media screen and (min-width: 1400px) {
@@ -776,8 +802,7 @@ main {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    margin-bottom: 3rem;
-    padding-bottom: 0;
+    padding-bottom: 3rem;
   }
 }
 .cc__icerik {
@@ -803,12 +828,15 @@ main {
   .cc__icerik {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
+.cc__eleman {
+  color: #415078;
+}
 .cc__eleman span {
+  color: inherit;
   display: block;
 }
 @media screen and (max-width: 1400px) {
@@ -818,10 +846,11 @@ main {
 }
 @media screen and (max-width: 768px) {
   .cc__eleman {
-    text-align: center !important;
+    text-align: left !important;
   }
 }
 .cc .buton--link {
+  color: inherit !important;
   vertical-align: baseline;
 }
 
@@ -875,18 +904,14 @@ main {
 @media screen and (max-width: 768px) {
   .swiper {
     width: 100%;
-    height: 27rem;
+    height: 64rem;
   }
 }
 .swiper-slide {
   display: flex;
-}
-@media screen and (min-width: 768px) {
-  .swiper-slide {
-    height: -webkit-fit-content !important;
-    height: -moz-fit-content !important;
-    height: fit-content !important;
-  }
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
 }
 @media screen and (max-width: 768px) {
   .swiper-slide {
@@ -900,6 +925,13 @@ main {
 @media screen and (min-width: 768px) {
   .swiper-slide + .swiper-slide {
     margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .swiper-wrapper {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -960,12 +992,12 @@ main {
 .buton.buton--link::after {
   content: "";
   width: 100%;
-  height: 2px;
+  height: 1px;
   background-color: currentColor;
   display: block;
   position: absolute;
-  bottom: 0;
   opacity: 0;
+  bottom: 4px;
 }
 .buton.buton--link:hover::after {
   opacity: 1;
@@ -1702,25 +1734,26 @@ input[type=number] {
   overflow: hidden;
   display: block;
   opacity: 0.7;
-  transition: all 150ms ease-out;
+  transition: height 150ms ease-out, opacity 150ms ease-out;
   transition-delay: 400ms;
+  border: 1px solid transparent;
+  /* @extend %golge; */
 }
 .urun-kart + .urun-kart {
   margin-top: 1rem;
 }
-.urun-kart.aktif {
-  opacity: 1;
-  height: 13rem;
-}
-@media screen and (max-width: 768px) {
-  .urun-kart.aktif {
-    height: 12rem;
-  }
-}
 .urun-kart.buton {
   background-color: rgba(192, 172, 159, 0.2);
   padding: 0;
-  border: none;
+}
+.urun-kart.aktif {
+  opacity: 1;
+  border: 1px solid #415078 !important;
+}
+@media screen and (min-width: 1400px) {
+  .urun-kart.aktif {
+    height: 13rem;
+  }
 }
 .urun-kart__gorsel {
   position: absolute;
@@ -1754,4 +1787,9 @@ input[type=number] {
 
 body {
   background-color: #f3eeee;
+  /* 	background: conic-gradient(
+  		from 270deg at 20% 7rem,
+  		rgba(0, 0, 0, 0),
+  		rgba($ana-renk, 0.1) 50%
+  	); */
 }/*# sourceMappingURL=main.min.css.map */
