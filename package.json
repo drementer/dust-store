@@ -5,7 +5,7 @@
 	"description": "Dust Store Web Page",
 	"scripts": {
 		"watch": "parcel watch src/*.html --public-url ./",
-		"dev": "parcel src/*.html --open",
+		"dev": "parcel src/*.html --open --no-cache",
 		"build": "parcel build src/*.html --public-url ./"
 	},
 	"keywords": [
