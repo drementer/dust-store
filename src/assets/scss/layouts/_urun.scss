@@ -2,16 +2,25 @@
 	position: relative;
 	width: fit-content;
 	overflow: hidden;
-	height: 100%;
 
 	$p-r: 0rem;
 	$p-l: 5rem;
 	@include padding-right($p-r);
 	@include padding-left($p-l);
 
+	@include medya(md) {
+		@include margin(0 2rem);
+		width: calc(100% - 4rem);
+		height: 171rem;
+	}
+
 	&__gorseller {
 		height: 100%;
-		width: 20rem;
+		width: 22rem;
+
+		@include medya(md) {
+			width: calc(100% - ($p-r + $p-l));
+		}
 	}
 
 	&__gorsel {
