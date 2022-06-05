@@ -2,7 +2,7 @@
  * Cuberto Mouse Follower
  * https://cuberto.com/
  *
- * @version 1.0.6
+ * @version 1.1.1
  * @author Cuberto, Artem Dordzhiev (Draft)
  */
 
@@ -54,7 +54,7 @@ export default class MouseFollower {
 	 * @param {number} options.hideTimeout Delay before hiding. It should be equal to the CSS hide animation time.
 	 * @param {array} options.initialPos Array (x, y) of initial cursor position.
 	 */
-	constructor(options) {
+	constructor(options = {}) {
 		this.gsap = MouseFollower.gsap || window.gsap;
 		this.options = Object.assign(
 			{},
@@ -451,7 +451,7 @@ export default class MouseFollower {
 		const rect = el.getBoundingClientRect();
 		this.stick = {
 			y: rect.top + rect.height / 2,
-			x: rect.left + rect.height / 2,
+			x: rect.left + rect.width / 2,
 		};
 	}
 
