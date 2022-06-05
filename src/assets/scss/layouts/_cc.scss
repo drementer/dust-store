@@ -1,16 +1,25 @@
 .cc {
 	@include padding(2rem);
+	background: conic-gradient(
+		from 90deg at 45% 0,
+		rgba(0, 0, 0, 0),
+		rgba($ana-renk, 0.4) 50%
+	);
 
 	@include medya(md) {
 		margin-top: auto;
+		background: conic-gradient(
+			from 90deg at 75% 0,
+			rgba(0, 0, 0, 0),
+			rgba($ana-renk, 0.4) 50%
+		);
 	}
 
 	@include min-medya(ul) {
 		@include flex;
 		align-items: flex-end;
 		justify-content: flex-end;
-		margin-bottom: 3rem;
-		padding-bottom: 0;
+		padding-bottom: 3rem;
 	}
 
 	&__icerik {
@@ -29,12 +38,17 @@
 		}
 
 		@include medya(md) {
-			@include flex-center-column;
+			@include flex-column;
+			justify-content: flex-start;
+			align-items: flex-start;
 		}
 	}
 
 	&__eleman {
+		color: $aksan;
+
 		span {
+			color: inherit;
 			display: block;
 		}
 
@@ -45,11 +59,12 @@
 		}
 
 		@include medya(md) {
-			text-align: center !important;
+			text-align: left !important;
 		}
 	}
 
 	.buton--link {
+		color: inherit !important;
 		vertical-align: baseline;
 	}
 }
