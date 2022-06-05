@@ -2,6 +2,7 @@
 	@include flex-center-row;
 
 	.buton{
+		border-color: transparent !important;
 		&:hover{
 			background-color: $ana-renk--10;
 			color: $beyaz;
