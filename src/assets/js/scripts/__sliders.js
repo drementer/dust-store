@@ -8,11 +8,15 @@ const sliders = () => {
 			mousewheel: false,
 			allowTouchMove: false,
 
+			hashNavigation: {
+				watchState: true,
+			},
+
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
 			},
-			
+
 			breakpoints: {
 				768: {
 					centeredSlides: false,
